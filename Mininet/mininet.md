@@ -1,4 +1,4 @@
-﻿# Mininet
+# Mininet
 
 1. [Overview](#overview)
 
@@ -12,6 +12,7 @@
 
 <a name="overview"></a>
 ##1. Overview
+
 Mininet giả lập toàn bộ mạng có các host, link, switch trên một máy duy nhất.
 
 <a name="deployment"></a>
