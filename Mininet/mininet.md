@@ -23,16 +23,16 @@ Ubuntu 14.04
 ### Intallation
 Chạy các lệnh sau:
 
-```
-sudo apt-get update
-sudo apt-get install git
-git clone git://github.com/mininet/mininet
-cd mininet
-git tag
-git checkout -b 2.2.1 2.2.1
-cd ..
-mininet/util/install.sh -a
-```
+
+	sudo apt-get update
+	sudo apt-get install git
+	git clone git://github.com/mininet/mininet
+	cd mininet
+	git tag
+	git checkout -b 2.2.1 2.2.1
+	cd ..
+	mininet/util/install.sh -a
+
 
 <a name="research"></a>
 
@@ -60,13 +60,13 @@ Dạng này rất đơn giản chỉ gồm 1 OpenFlow switch kết nối với 2
 
 <img src = "\img\1.png">
 
-```
-mininet> net
-h1 h1-eth0:s1-eth1
-h1 h2-eth0:s1-eth2
-s1 lo: s1-eth1:h1-eth0 s1-eth2:h2-eth0
-c0
-```
+
+	mininet> net
+	h1 h1-eth0:s1-eth1
+	h1 h2-eth0:s1-eth2
+	s1 lo: s1-eth1:h1-eth0 s1-eth2:h2-eth0
+	c0
+
 
 #### Single
 
@@ -76,15 +76,15 @@ Topo gồm 1 OpenFlow switch kết nối với k port
 
 <img src = "img\2.png">
 
-```
-mininet> net
-h1 h1-eth0:s1-eth1
-h2 h2-eth0:s1-eth2
-h3 h3-eth0:s1-eth3
-h4 h4-eth0:s1-eth4
-s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0 s1-eth3:h3-eth0 s1-eth4:h4-eth0
-c0
-```
+
+	mininet> net
+	h1 h1-eth0:s1-eth1
+	h2 h2-eth0:s1-eth2
+	h3 h3-eth0:s1-eth3
+	h4 h4-eth0:s1-eth4
+	s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0 s1-eth3:h3-eth0 s1-eth4:h4-eth0
+	c0
+
 
 #### Reversed
 
@@ -94,15 +94,15 @@ Giống Single, nhưng thứ tự các giao diện kết nối từ các host t�
 
 <img src = "img\3.png">
 
-```
-mininet> net
-h1 h1-eth0:s1-eth4
-h2 h2-eth0:s1-eth3
-h3 h3-eth0:s1-eth2
-h4 h4-eth0:s1-eth1
-s1 lo:  s1-eth1:h4-eth0 s1-eth2:h3-eth0 s1-eth3:h2-eth0 s1-eth4:h1-eth0
-c0
-```
+
+	mininet> net
+	h1 h1-eth0:s1-eth4
+	h2 h2-eth0:s1-eth3
+	h3 h3-eth0:s1-eth2
+	h4 h4-eth0:s1-eth1
+	s1 lo:  s1-eth1:h4-eth0 s1-eth2:h3-eth0 s1-eth3:h2-eth0 s1-eth4:h1-eth0
+	c0
+
 
 #### Linear 
 
@@ -112,18 +112,18 @@ Topo này gồm có k switch và k host, mỗi switch sẽ được kết nối 
 
 <img src = "img\4.png">
 
-```
-mininet> net
-h1 h1-eth0:s1-eth1
-h2 h2-eth0:s2-eth1
-h3 h3-eth0:s3-eth1
-h4 h4-eth0:s4-eth1
-s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth2
-s2 lo:  s2-eth1:h2-eth0 s2-eth2:s1-eth2 s2-eth3:s3-eth2
-s3 lo:  s3-eth1:h3-eth0 s3-eth2:s2-eth3 s3-eth3:s4-eth2
-s4 lo:  s4-eth1:h4-eth0 s4-eth2:s3-eth3
-c0
-```
+
+	mininet> net
+	h1 h1-eth0:s1-eth1
+	h2 h2-eth0:s2-eth1
+	h3 h3-eth0:s3-eth1
+	h4 h4-eth0:s4-eth1
+	s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth2
+	s2 lo:  s2-eth1:h2-eth0 s2-eth2:s1-eth2 s2-eth3:s3-eth2
+	s3 lo:  s3-eth1:h3-eth0 s3-eth2:s2-eth3 s3-eth3:s4-eth2
+	s4 lo:  s4-eth1:h4-eth0 s4-eth2:s3-eth3
+	c0
+
 
 #### Tree
 
@@ -131,27 +131,27 @@ Topo này là một cây gồm k mức
 	
 	mn --topo tree,3 
 
-<img src = "img\5.png>
+<img src = "img\5.png">
 
-```
-mininet> net
-h1 h1-eth0:s3-eth1
-h2 h2-eth0:s3-eth2
-h3 h3-eth0:s4-eth1
-h4 h4-eth0:s4-eth2
-h5 h5-eth0:s6-eth1
-h6 h6-eth0:s6-eth2
-h7 h7-eth0:s7-eth1
-h8 h8-eth0:s7-eth2
-s1 lo:  s1-eth1:s2-eth3 s1-eth2:s5-eth3
-s2 lo:  s2-eth1:s3-eth3 s2-eth2:s4-eth3 s2-eth3:s1-eth1
-s3 lo:  s3-eth1:h1-eth0 s3-eth2:h2-eth0 s3-eth3:s2-eth1
-s4 lo:  s4-eth1:h3-eth0 s4-eth2:h4-eth0 s4-eth3:s2-eth2
-s5 lo:  s5-eth1:s6-eth3 s5-eth2:s7-eth3 s5-eth3:s1-eth2
-s6 lo:  s6-eth1:h5-eth0 s6-eth2:h6-eth0 s6-eth3:s5-eth1
-s7 lo:  s7-eth1:h7-eth0 s7-eth2:h8-eth0 s7-eth3:s5-eth2
-c0
-```
+
+	mininet> net
+	h1 h1-eth0:s3-eth1
+	h2 h2-eth0:s3-eth2
+	h3 h3-eth0:s4-eth1
+	h4 h4-eth0:s4-eth2
+	h5 h5-eth0:s6-eth1
+	h6 h6-eth0:s6-eth2
+	h7 h7-eth0:s7-eth1
+	h8 h8-eth0:s7-eth2
+	s1 lo:  s1-eth1:s2-eth3 s1-eth2:s5-eth3
+	s2 lo:  s2-eth1:s3-eth3 s2-eth2:s4-eth3 s2-eth3:s1-eth1
+	s3 lo:  s3-eth1:h1-eth0 s3-eth2:h2-eth0 s3-eth3:s2-eth1
+	s4 lo:  s4-eth1:h3-eth0 s4-eth2:h4-eth0 s4-eth3:s2-eth2
+	s5 lo:  s5-eth1:s6-eth3 s5-eth2:s7-eth3 s5-eth3:s1-eth2
+	s6 lo:  s6-eth1:h5-eth0 s6-eth2:h6-eth0 s6-eth3:s5-eth1
+	s7 lo:  s7-eth1:h7-eth0 s7-eth2:h8-eth0 s7-eth3:s5-eth2
+	c0
+
 
 
 
