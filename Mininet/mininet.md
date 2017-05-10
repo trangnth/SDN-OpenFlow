@@ -163,4 +163,4 @@ Ví dụ: Tạo 1 topo gồm 2 Switch, mỗi Switch gồm 2 host, controller k�
 
 Sau đó chạy với lệnh `python custom_topo.sh` và xem topo trên ODL
 
-(img src="img/9.png")
+<img src="img\9.png">
