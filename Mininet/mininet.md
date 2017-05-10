@@ -74,7 +74,7 @@ Topo gồm 1 OpenFlow switch kết nối với k port
 
 	mn --topo single, 4
 
-<img scr = "img\2.png">
+<img src = "img\2.png">
 
 ```
 mininet> net
