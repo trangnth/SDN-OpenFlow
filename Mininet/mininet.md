@@ -163,7 +163,7 @@ Ngoài ra Mininet còn hỗ trợ việc tạo một topo bất kỳ bằng vi�
 
 Ví dụ: Tạo 1 topo gồm 2 Switch, mỗi Switch gồm 2 host, controller kết nối tới ODL với ip=192.168.169.229
 
-(custom_topo.sh)[custom_topo.sh]
+[custom_topo.sh](custom_topo.sh)
 
 Sau đó chạy với lệnh `python custom_topo.sh` và xem topo trên ODL
 
